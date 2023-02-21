@@ -11,11 +11,19 @@ public class Main {
     }
     return b;
   }
-  
-  public static int[][] copyRagged(int[][] a){
+  public static int[][] copyRectangle(int[][] a){
     int[][] b= new int[a.length][a[0].length];
     for(int row=0;row<a.length;row++){
       for(int val=0;val<a[0].length;val++){
+        b[row][val]=a[row][val];
+      }
+    }
+    return b;
+  }
+  public static int[][] copyRagged(int[][] a){
+    int[][] b= new int[a.length][a[0].length];
+    for(int row=0;row<a.length;row++){
+      for(int val=0;val<a[val].length;val++){
         b[row][val]=a[row][val];
       }
     }
