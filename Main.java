@@ -30,9 +30,31 @@ public class Main {
     return b;
   }
 
+public static void printTranspose(double[][] a){
+  for(int c=0;c<a[0].length;c++){
+    for(int r=0;r<a.length;r++){
+      System.out.print(a[r][c]+" ");
+    }
+    System.out.println();
+}
+}
+
 
   public static void main(String[] args) {
-  
+    double[][] a = new double[][] {
+      {99, 85, 98},
+      {98, 57, 79},
+      {92, 77, 74},
+      {94, 62, 81},
+      {99, 94, 92},
+      {80, 76.5, 67},
+      {76, 58.5, 90.5},
+      {92, 66, 91},
+      {77, 70.5, 66.5},
+      {89, 89.5, 81}
+  };
+  printTranspose(a);
+
     
   }
 }
