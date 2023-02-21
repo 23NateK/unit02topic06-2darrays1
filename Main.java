@@ -38,15 +38,26 @@ public static void printTranspose(double[][] a){
     System.out.println();
 }
 }
-public static void withWeightedAverage(double[][] a,double[] w){
+public static double[][] withWeightedAverage(double[][] a,double[] w){
+  double[][] b = new double[a.length+1][a[0].length+1];
   double sum=0;
   for(int r=0;r<a.length;r++){
     for(int c=0;c<a[0].length;c++){
+      b[r][c]=a[r][c];
       sum+=a[r][c]*w[c];
     }
-    System.out.println("Row "+ (r+1) + " Average: "+ sum);
+    b[r][3]=sum;
     sum=0;
 }
+for(int c=0;c<a[0].length;c++){
+  for(int r=0;r<a.length;r++){
+    sum+=a[r][c];
+  }
+  sum=sum/a.length;
+  b[a.length][c]=sum;
+  sum=0;
+}
+return b;
 }
 
   public static void main(String[] args) {
@@ -63,6 +74,6 @@ public static void withWeightedAverage(double[][] a,double[] w){
       {89, 89.5, 81}
   };
   double[] weights = { 0.25, 0.25, 0.50 };
-  withWeightedAverage(a,weights);
+  printTranspose(withWeightedAverage(a,weights));
   }
 }
