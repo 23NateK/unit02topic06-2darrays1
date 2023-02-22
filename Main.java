@@ -74,6 +74,6 @@ return b;
       {89, 89.5, 81}
   };
   double[] weights = { 0.25, 0.25, 0.50 };
-  printTranspose(withWeightedAverage(a,weights));
+  System.out.println(Arrays.deepToString(withWeightedAverage(a,weights)));
   }
 }
