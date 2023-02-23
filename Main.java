@@ -20,6 +20,8 @@ public class Main {
     }
     return b;
   }
+
+  // FIXME: I don't think this works. Did you test it?
   public static int[][] copyRagged(int[][] a){
     int[][] b= new int[a.length][a[0].length];
     for(int row=0;row<a.length;row++){
@@ -30,6 +32,7 @@ public class Main {
     return b;
   }
 
+  // good
 public static void printTranspose(double[][] a){
   for(int c=0;c<a[0].length;c++){
     for(int r=0;r<a.length;r++){
@@ -38,6 +41,8 @@ public static void printTranspose(double[][] a){
     System.out.println();
 }
 }
+
+// TODO: this is perfect, except you don't fill in the bottom right value of b (which is the average of averages)
 public static double[][] withWeightedAverage(double[][] a,double[] w){
   double[][] b = new double[a.length+1][a[0].length+1];
   double sum=0;
