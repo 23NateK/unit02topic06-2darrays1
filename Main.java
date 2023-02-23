@@ -23,11 +23,9 @@ public class Main {
 
   // FIXME: I don't think this works. Did you test it?
   public static int[][] copyRagged(int[][] a){
-    int[][] b= new int[a.length][a[0].length];
+    int[][] b= new int[a.length][];
     for(int row=0;row<a.length;row++){
-      for(int val=0;val<a[val].length;val++){
-        b[row][val]=a[row][val];
-      }
+        b[row]=a[row];
     }
     return b;
   }
@@ -62,23 +60,30 @@ for(int c=0;c<a[0].length;c++){
   b[a.length][c]=sum;
   sum=0;
 }
+for(int q=0;q<a.length;q++){
+  sum+=b[q][3];
+}
+  sum=sum/a.length;
+  b[a.length][3]=sum;
+  sum=0;
 return b;
 }
 
   public static void main(String[] args) {
-    double[][] a = new double[][] {
+    int[][] a = new int[][] {
       {99, 85, 98},
       {98, 57, 79},
       {92, 77, 74},
       {94, 62, 81},
       {99, 94, 92},
-      {80, 76.5, 67},
-      {76, 58.5, 90.5},
+      {80, 76},
+      {76},
       {92, 66, 91},
-      {77, 70.5, 66.5},
-      {89, 89.5, 81}
+      {77, 70, 66},
+      {89, 89, 81}
   };
   double[] weights = { 0.25, 0.25, 0.50 };
-  System.out.println(Arrays.deepToString(withWeightedAverage(a,weights)));
+  //System.out.println(Arrays.deepToString(withWeightedAverage(a,weights)));
+  System.out.println(Arrays.deepToString(copyRagged(a)));
   }
 }
